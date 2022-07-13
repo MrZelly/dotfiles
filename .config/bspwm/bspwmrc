@@ -1,0 +1,28 @@
+#! /bin/sh
+
+sxhkd &
+
+# bigger cursor
+xsetroot -cursor_name left_ptr
+
+# set background
+feh --bg-scale /home/zelly/Pictures/vulcano.png
+
+# launche polybar
+bash /home/zelly/.config/polybar/shapes/launch.sh &
+
+bspc monitor -d I II III IV V
+
+bspc config focus_follows_pointer true
+# bspc config pointer_follows_focus true
+
+bspc config border_width         3
+bspc config window_gap          10
+
+bspc config focused_border_color \#ff0000
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+picom --experimental-backends &
